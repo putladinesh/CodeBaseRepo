@@ -1,6 +1,6 @@
 import { createElement, useState, useEffect } from "react";
 
-import { View, TextStyle, ViewStyle, TextInput, FlatList, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { View, TextStyle, ViewStyle, TextInput, FlatList, Text, TouchableOpacity,  StyleSheet } from "react-native";
 
 import { Style } from "@mendix/pluggable-widgets-tools";
 
@@ -24,7 +24,7 @@ export interface CustomStyle extends Style {
 
 export function SearchableDropDown(props: SearchableDropDownProps<ViewStyle>) {
     const [searchText, setSearchText] = useState("");
-    const [selectedText , setSelectedText]=useState("");
+    const [selectedText, setSelectedText] = useState("");
     const [isDropdownVisible, setIsDropdownVisible] = useState(false);
 
     useEffect(() => {
@@ -35,7 +35,7 @@ export function SearchableDropDown(props: SearchableDropDownProps<ViewStyle>) {
     }, [props.ValuetoSet?.value]);
 
 
-     const filteredOptions = props.objectsDatasource?.items?.filter(item => {
+    const filteredOptions = props.objectsDatasource?.items?.filter(item => {
         const label = props.displayAttribute.get(item)?.value ?? "";
         return label.toLowerCase().includes(searchText.toLowerCase());
     }) ?? [];
@@ -46,31 +46,33 @@ export function SearchableDropDown(props: SearchableDropDownProps<ViewStyle>) {
         try {
             if (props.ValuetoSet?.setValue) {
                 props.ValuetoSet.setValue(item);
-               props.Onclick?.execute();
-               setSelectedText(props.displayAttribute.get(item)?.value ?? "Unnamed")
+                props.Onclick?.execute();
+                setSelectedText(props.displayAttribute.get(item)?.value ?? "Unnamed")
             }
-           // const selected = props.displayAttribute.get(item)?.value ?? "Unnamed";
+            // const selected = props.displayAttribute.get(item)?.value ?? "Unnamed";
             setSearchText("");
             setIsDropdownVisible(false);
             if (!item) {
-              
+
             }
         } catch (error) {
-           
+
         }
     };
-
-    const toggleDropdown = (): void => {
+      const toggleDropdown = (): void => {
          setIsDropdownVisible(prev => !prev);
     };
 
-     const handleClear = (): void => {
+
+    const handleClear = (): void => {
         setSearchText("");
         props.ValuetoSet?.setValue(undefined);
     };
 
-    return (
+    return(
+      
     <View style={styles.container}>
+        <Text style={styles.lbl}>{props.Labl}</Text> 
             <TouchableOpacity onPress={toggleDropdown}>
                 <View style={styles.input}>
                     <Text style={styles.inputText}>
@@ -124,8 +126,8 @@ export function SearchableDropDown(props: SearchableDropDownProps<ViewStyle>) {
         </View>
     );
 }
-
-    const styles = StyleSheet.create({
+// 
+const styles = StyleSheet.create({
         container: {
         minHeight: 60,
         position: "relative",     // Makes absolute positioning relative to this
@@ -167,16 +169,17 @@ export function SearchableDropDown(props: SearchableDropDownProps<ViewStyle>) {
         marginRight: 6
     },
     dropdown: {
-        position: "absolute",      // This makes it float over others
+        //position: "absolute",      // This makes it float over others
         backgroundColor: "#fff",
         borderColor: "#ccc",
         borderWidth: 1,
         borderRadius: 5,
         maxHeight: 250,
         zIndex: 999,               // Makes sure it stacks above others
-        elevation: 5,              // For Android shadow
-        width: "100%"  ,
-        bottom : 0            // Match parent width
+        //elevation: 5,              // For Android shadow
+        width: "100%" ,
+        //marginTop:20,
+        //bottom : 0          // Match parent width
     },
     searchBox: {
         height: 40,
@@ -200,5 +203,13 @@ export function SearchableDropDown(props: SearchableDropDownProps<ViewStyle>) {
         padding: 10,
         fontStyle: "italic",
         color: "gray"
+    },
+    lbl:{
+        color:"white",
+        marginBottom:8,
+        fontFamily:"nornmal",
+        textAlign:"left",
+        fontSize:12
+
     }
 });

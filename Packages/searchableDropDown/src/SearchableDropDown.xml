@@ -5,7 +5,7 @@
 	<icon />
 	<properties>
 		<propertyGroup caption="General">
-			<property key="ValuetoSet" type="association" required="true" selectableObjects="objectsDatasource" >
+			<property key="ValuetoSet" type="association"  required="true" selectableObjects="objectsDatasource" >
 				<caption>Reference
 				</caption>
 				<description>The association to set when an object is selected.
@@ -29,9 +29,9 @@
 				<caption>On Click</caption>
 				<description>Select a Onclick Action</description>
 			</property>
-			<property key="lab" type="string">
-				<caption>label</caption>
-				<description>label</description>
+			<property key="Labl" type="string">
+				<caption>Label</caption>
+				<description>Add Label</description>
 			</property>
 		</propertyGroup>
 	</properties>
