@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="mxtechies.encodedimageviewer.EncodedImageViewer" pluginWidget="true" needsEntityContext="true" offlineCapable="true"
+        supportedPlatform="Native"
+        xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+    <name>Encoded Image Viewer</name>
+    <description>Native Base 64 Image Viewer</description>
+    <icon/>
+    <properties>
+        <propertyGroup caption="General">
+           <property key="EnocdedString" type="attribute" required="true">
+				<caption>Base64Value</caption>
+				<description>Pass the Base64 Value Attribute</description>
+				<attributeTypes>
+					<attributeType name="String" />
+				</attributeTypes>
+			</property>
+            <property key="imgheight" type="integer" defaultValue="20" required="true">
+				<caption>Height</caption>
+				<description> Height will be considered as percentage </description>
+				
+			</property>
+            <property key="imgwidth" type="integer" defaultValue="20" required="true">
+				<caption>Width</caption>
+				<description>Width will be considered as percentage</description>
+			</property>
+        </propertyGroup>
+    </properties>
+</widget>

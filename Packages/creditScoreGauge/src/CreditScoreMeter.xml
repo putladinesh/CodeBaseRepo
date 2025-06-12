@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="mxtechies.creditscoremeter.CreditScoreMeter" pluginWidget="true" needsEntityContext="true" offlineCapable="true"
+        supportedPlatform="Native"
+        xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+    <name>Credit Score Meter</name>
+    <description>Credit Score Meter</description>
+    <icon/>
+    <properties>
+        <propertyGroup caption="General">
+            <property key="score" type="attribute" >
+                <caption>Mape Value</caption>
+                <description>CibilScore</description>
+                <attributeTypes>
+					<attributeType name="Integer" />
+				</attributeTypes>
+            </property>
+        </propertyGroup>
+    </properties>
+</widget>

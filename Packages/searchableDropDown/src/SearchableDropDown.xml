@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="mxtechies.searchabledropdown.SearchableDropDown" pluginWidget="true" needsEntityContext="true" offlineCapable="true" supportedPlatform="Native" xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+	<name>Searchable Drop Down</name>
+	<description>My widget description</description>
+	<icon />
+	<properties>
+		<propertyGroup caption="General">
+			<property key="ValuetoSet" type="association" required="true" selectableObjects="objectsDatasource" >
+				<caption>Reference
+				</caption>
+				<description>The association to set when an object is selected.
+				</description>
+				<associationTypes>
+					<associationType name="Reference" />
+				</associationTypes>
+			</property>
+			<property key="objectsDatasource" type="datasource" isList="true" required="true">
+				<caption>Selectable Objects</caption>
+				<description>The list of selectable options.</description>
+			</property>
+			<property key="displayAttribute" type="attribute" required="true" dataSource="objectsDatasource" >
+				<caption>Display Attribute</caption>
+				<description>The string attribute to show as label in the dropdown</description>
+				<attributeTypes>
+					<attributeType name="String" />
+				</attributeTypes>
+			</property>
+			<property key="Onclick" type="action" >
+				<caption>On Click</caption>
+				<description>Select a Onclick Action</description>
+			</property>
+			<property key="lab" type="string">
+				<caption>label</caption>
+				<description>label</description>
+			</property>
+		</propertyGroup>
+	</properties>
+</widget>
